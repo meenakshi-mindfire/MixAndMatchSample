@@ -13,6 +13,8 @@
 		BA82E4D71A6D0E1B00E66156 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BA82E4D61A6D0E1B00E66156 /* Images.xcassets */; };
 		BA82E4DA1A6D0E1B00E66156 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = BA82E4D81A6D0E1B00E66156 /* LaunchScreen.xib */; };
 		BA82E4E61A6D0E1C00E66156 /* MixAndMatchSampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA82E4E51A6D0E1C00E66156 /* MixAndMatchSampleTests.swift */; };
+		BA82E4F71A6D16C400E66156 /* ObjectiveCObject.m in Sources */ = {isa = PBXBuildFile; fileRef = BA82E4F61A6D16C400E66156 /* ObjectiveCObject.m */; };
+		BA82E4F91A6D183A00E66156 /* SwiftObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA82E4F81A6D183A00E66156 /* SwiftObject.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +38,10 @@
 		BA82E4DF1A6D0E1C00E66156 /* MixAndMatchSampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MixAndMatchSampleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA82E4E41A6D0E1C00E66156 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BA82E4E51A6D0E1C00E66156 /* MixAndMatchSampleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MixAndMatchSampleTests.swift; sourceTree = "<group>"; };
+		BA82E4EF1A6D111D00E66156 /* MixAndMatchSample-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MixAndMatchSample-Bridging-Header.h"; sourceTree = "<group>"; };
+		BA82E4F51A6D16C400E66156 /* ObjectiveCObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ObjectiveCObject.h; sourceTree = "<group>"; };
+		BA82E4F61A6D16C400E66156 /* ObjectiveCObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ObjectiveCObject.m; sourceTree = "<group>"; };
+		BA82E4F81A6D183A00E66156 /* SwiftObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SwiftObject.swift; path = ../SwiftObject.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +68,7 @@
 				BA82E4CC1A6D0E1B00E66156 /* MixAndMatchSample */,
 				BA82E4E21A6D0E1C00E66156 /* MixAndMatchSampleTests */,
 				BA82E4CB1A6D0E1B00E66156 /* Products */,
+				BA82E4EF1A6D111D00E66156 /* MixAndMatchSample-Bridging-Header.h */,
 			);
 			sourceTree = "<group>";
 		};
@@ -77,12 +84,15 @@
 		BA82E4CC1A6D0E1B00E66156 /* MixAndMatchSample */ = {
 			isa = PBXGroup;
 			children = (
+				BA82E4F81A6D183A00E66156 /* SwiftObject.swift */,
 				BA82E4CF1A6D0E1B00E66156 /* AppDelegate.swift */,
 				BA82E4D11A6D0E1B00E66156 /* ViewController.swift */,
 				BA82E4D31A6D0E1B00E66156 /* Main.storyboard */,
 				BA82E4D61A6D0E1B00E66156 /* Images.xcassets */,
 				BA82E4D81A6D0E1B00E66156 /* LaunchScreen.xib */,
 				BA82E4CD1A6D0E1B00E66156 /* Supporting Files */,
+				BA82E4F51A6D16C400E66156 /* ObjectiveCObject.h */,
+				BA82E4F61A6D16C400E66156 /* ObjectiveCObject.m */,
 			);
 			path = MixAndMatchSample;
 			sourceTree = "<group>";
@@ -212,8 +222,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BA82E4F91A6D183A00E66156 /* SwiftObject.swift in Sources */,
 				BA82E4D21A6D0E1B00E66156 /* ViewController.swift in Sources */,
 				BA82E4D01A6D0E1B00E66156 /* AppDelegate.swift in Sources */,
+				BA82E4F71A6D16C400E66156 /* ObjectiveCObject.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -338,9 +350,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = MixAndMatchSample/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "MixAndMatchSample-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -348,9 +363,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = MixAndMatchSample/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "MixAndMatchSample-Bridging-Header.h";
 			};
 			name = Release;
 		};
